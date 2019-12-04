@@ -1,0 +1,29 @@
+﻿@using MVCSTOCK.Models.Entity
+@model List<TBLCATEGORIES>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>CATEGORY ID</th>
+        <th>CATEGORY NAME</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    <tbody>
+        @foreach(var ctgr in Model)
+        {
+        <tr>
+            <th>@ctgr.CATEGORYID</th>
+            <td>@ctgr.CATEGORYNAME</td>
+            <td><a href="/CATEGORY/DELETE/@ctgr.CATEGORYID" class="btn btn-danger">DELETE </a></td>
+            <td><a href="/CATEGORY/ImportCategory/@ctgr.CATEGORYID" class="btn btn-success">UPDATE </a></td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+<a href="/Category/NewCategory/" class="btn btn-primary">ADD NEW CATEGORY</a>
+

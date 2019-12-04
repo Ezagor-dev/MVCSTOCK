@@ -1,0 +1,20 @@
+﻿@model MVCSTOCK.Models.Entity.TBLCATEGORIES
+@{
+    ViewBag.Title = "ImportCategory";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("UPDATE", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.CATEGORYID)
+        @Html.TextBoxFor(m => m.CATEGORYID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m=>m.CATEGORYNAME)
+        @Html.TextBoxFor(m=>m.CATEGORYNAME,new { @class="form-control"})
+    </div>
+    <div>
+        <button class="btn btn-warning">Update Category</button>
+    </div>
+}
+
